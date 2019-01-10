@@ -1,33 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http' ; 
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list.component';
-
-import { ConvertToSpacePipe } from './shared/convert-to-spaces.pipe' ; 
-
-import { StarComponent } from './shared/star.component';
-import { ProductDetailComponent } from './products/product-detail.component';
-import { WelcomeComponent } from './welcome.component';
-import { PageNotFoundComponent } from './page-not-found-component.component' ; 
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { WelcomeComponent } from "./welcome.component";
+import { PageNotFoundComponent } from "./page-not-found-component.component";
+import { ProductModule } from "./products/product/product.module";
 @NgModule({
-  declarations: [
-    AppComponent, ProductListComponent, StarComponent,
-    ConvertToSpacePipe,
-    ProductDetailComponent,
-    WelcomeComponent,
-    PageNotFoundComponent
-  ],
+  declarations: [AppComponent, WelcomeComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule, 
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
